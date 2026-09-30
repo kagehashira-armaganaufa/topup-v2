@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GemShop – Top Up Diamond ML, Free Fire & Robux</title>
+<style>
+:root{--bg:#0d0a2a;--panel:#1b1560;--line:#362d96;--text:#f3f1ff;--muted:#aaa4e0;--gem:#3ce6ff;--pink:#ff3d8b;--gold:#ffc93c;--err:#ff7a9a;--wa:#25d366;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,sans-serif;background:radial-gradient(900px 500px at 85% -5%,#4a25c277,transparent),radial-gradient(600px 400px at -10% 30%,#ff3d8b22,transparent),var(--bg);color:var(--text);line-height:1.55}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+button,a{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;background:#0d0a2acc;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.brand{font-weight:800;font-size:1.15rem;display:flex;gap:8px;align-items:center}
+.brand svg{width:24px;height:24px}
+.pill{background:var(--wa);color:#05260f;font-weight:700;font-size:.85rem;padding:8px 14px;border-radius:99px;text-decoration:none}
+.hero{display:grid;gap:26px;padding:36px 0 24px;align-items:center}
+@media(min-width:820px){.hero{grid-template-columns:1.1fr 1fr;padding:60px 0 36px}}
+h1{font-size:clamp(2.1rem,7vw,3.6rem);line-height:1.05;letter-spacing:-.03em}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--gem),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);margin:14px 0 22px;max-width:44ch}
+.cta{display:inline-block;background:linear-gradient(90deg,var(--gem),#7a8bff);color:#08103a;font-weight:800;padding:14px 26px;border-radius:12px;text-decoration:none}
+.posters{display:flex;justify-content:center;padding:12px 0}
+.posters img{width:31%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:2px solid #ffffff33;box-shadow:0 14px 34px #000a}
+.posters img:nth-child(1){transform:rotate(-7deg) translateX(14px)}
+.posters img:nth-child(2){transform:translateY(-18px);z-index:1}
+.posters img:nth-child(3){transform:rotate(7deg) translateX(-14px)}
+h2.t{font-size:1.4rem;margin:34px 0 14px}
+.steps{display:grid;gap:12px}
+@media(min-width:700px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.step i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gem);color:#08103a;font-style:normal;font-weight:800;margin-bottom:8px}
+.step b{display:block}
+.step span{color:var(--muted);font-size:.86rem}
+.grid{display:grid;gap:16px;margin-top:14px}
+@media(min-width:860px){.grid{grid-template-columns:1fr 330px;align-items:start}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px}
+.card h2{font-size:1.02rem;margin-bottom:12px}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.game,.pkg{background:var(--bg);border:2px solid var(--line);border-radius:12px;text-align:left}
+.game{padding:0;overflow:hidden;text-align:center}
+.game img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.game span{display:block;padding:8px 4px;font-weight:600;font-size:.85rem}
+[aria-pressed=true]{border-color:var(--gem)!important;box-shadow:0 0 0 3px #3ce6ff33}
+.fields{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+.fields.one{grid-template-columns:1fr}
+label{display:block;font-size:.82rem;color:var(--muted);margin-bottom:5px}
+input{width:100%;padding:13px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+input.bad{border-color:var(--err)}
+.msg{color:var(--err);font-size:.84rem;min-height:1.2em;margin-top:8px}
+.help{background:var(--bg);border-left:3px solid var(--gold);border-radius:8px;padding:10px 12px;font-size:.85rem;color:var(--muted);margin-top:8px}
+.help b{color:var(--text)}
+.pkgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.pkg{padding:12px}
+.pkg b{display:block;font-size:1.15rem;color:var(--gem)}
+.pkg em{font-style:normal;font-size:.75rem;color:var(--muted);display:block}
+.pkg small{color:var(--gold);font-weight:600}
+.summary{position:sticky;top:70px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+.row span:first-child{color:var(--muted)}
+.row span:last-child{text-align:right;word-break:break-all}
+.total{font-size:1.3rem;font-weight:800;color:var(--gold);border:0;padding-top:12px}
+.buy{width:100%;margin-top:14px;padding:14px;border:0;border-radius:12px;background:linear-gradient(90deg,var(--pink),#ff7a4d);font-weight:800;font-size:1rem}
+.buy.alt{background:linear-gradient(90deg,var(--gem),#7a8bff);color:#08103a}
+.ghost{width:100%;margin-top:8px;padding:11px;background:none;border:1px solid var(--line);border-radius:12px}
+.faq details{border-bottom:1px solid var(--line);padding:12px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{color:var(--muted);font-size:.9rem;margin-top:8px}
+.contact{text-align:center;background:linear-gradient(135deg,#2a1f8f,#4a1d7a);border:1px solid var(--line);border-radius:20px;padding:26px 18px;margin:34px 0 20px}
+.contact .num{font-size:1.7rem;font-weight:800;letter-spacing:.03em;margin:6px 0 14px}
+.contact a.pill{display:inline-block;padding:12px 22px;font-size:.95rem}
+.contact .ghost{width:auto;padding:11px 18px;margin:8px 0 0 6px}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:10px 16px 90px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;background:var(--wa);color:#05260f;font-weight:800;border-radius:99px;padding:12px 18px;text-decoration:none;box-shadow:0 8px 24px #000a}
+dialog{border:1px solid var(--line);border-radius:18px;background:var(--panel);color:var(--text);width:calc(100% - 24px);max-width:420px;padding:20px;margin:auto}
+dialog::backdrop{background:#000b}
+.dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.x{background:none;border:0;font-size:1.5rem;line-height:1}
+.big{font-size:1.7rem;font-weight:800;color:var(--gold);text-align:center;margin:6px 0}
+.box{background:var(--bg);border:1px dashed var(--gem);border-radius:12px;padding:12px;text-align:center;margin:10px 0}
+.box b{font-size:1.3rem;letter-spacing:.04em}
+.hint{color:var(--muted);font-size:.8rem}
+ol{padding-left:20px;font-size:.9rem;color:var(--muted)}
+ol li{margin-bottom:6px}
+ol b{color:var(--text)}
+#toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--gem);color:#08103a;font-weight:600;padding:10px 18px;border-radius:99px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+#toast.on{opacity:1}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 4 12l12 18L28 12z" fill="#3ce6ff"/><path d="M4 12h24L16 2zM16 30 10 12h12z" fill="#ffffff55"/></svg>
+    <span class="sn">GemShop</span>
+  </div>
+  <a class="pill" id="waTop" target="_blank" rel="noopener">Hubungi admin</a>
+</div></header>
+
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <h1>Top up <em>diamond</em> game favoritmu, cepat dan mudah.</h1>
+      <p>Mobile Legends, Free Fire, dan Robux. Isi ID, pilih nominal, transfer lewat DANA, kirim bukti ke WhatsApp.</p>
+      <a class="cta" href="#order">Mulai top up</a>
+    </div>
+    <div class="posters"><img id="p1" alt="Mobile Legends"><img id="p2" alt="Free Fire"><img id="p3" alt="Roblox"></div>
+  </section>
+
+  <h2 class="t">Cara top up</h2>
+  <div class="steps">
+    <div class="step"><i>1</i><b>Pilih &amp; isi data</b><span>Pilih game, isi ID akun, lalu pilih nominal.</span></div>
+    <div class="step"><i>2</i><b>Pesan</b><span>Tekan Pesan sekarang untuk melihat total dan nomor DANA.</span></div>
+    <div class="step"><i>3</i><b>Transfer</b><span>Transfer ke DANA sesuai total, lalu screenshot buktinya.</span></div>
+    <div class="step"><i>4</i><b>Kirim bukti</b><span>Kirim screenshot ke WhatsApp admin. Diamond diproses.</span></div>
+  </div>
+
+  <div class="grid" id="order">
+    <main>
+      <section class="card" style="margin-top:14px"><h2>1. Pilih game</h2><div class="games" id="games"></div></section>
+      <section class="card"><h2>2. Masukkan data akun</h2>
+        <div class="fields" id="fields">
+          <div><label for="uid" id="uidLabel">User ID</label><input id="uid" autocomplete="off"></div>
+          <div id="zoneBox"><label for="zone">Zone ID</label><input id="zone" inputmode="numeric" autocomplete="off" placeholder="1234"></div>
+        </div>
+        <div class="msg" id="idMsg" role="alert"></div>
+        <div class="help" id="idHelp"></div>
+      </section>
+      <section class="card"><h2>3. Pilih nominal</h2><div class="pkgs" id="pkgs"></div></section>
+    </main>
+    <aside class="card summary">
+      <h2>Ringkasan pesanan</h2>
+      <div class="row"><span>Game</span><span id="sGame">-</span></div>
+      <div class="row"><span>Akun</span><span id="sId">-</span></div>
+      <div class="row"><span>Nominal</span><span id="sPkg">-</span></div>
+      <div class="row total"><span>Harga</span><span id="sTotal">Rp0</span></div>
+      <button class="buy" id="buy">Pesan sekarang</button>
+      <div class="msg" id="buyMsg" role="alert"></div>
+    </aside>
+  </div>
+
+  <h2 class="t">Pertanyaan umum</h2>
+  <section class="faq">
+    <details><summary>Apa itu Zone ID?</summary><p>Zone ID adalah angka server akun Mobile Legends. Di profil game, angka ini tampil dalam tanda kurung di samping User ID, contoh: 12345678 (1234). User ID = 12345678, Zone ID = 1234. Game lain tidak memakai Zone ID.</p></details>
+    <details><summary>Di mana melihat ID akun?</summary><p>Mobile Legends: buka profil (ketuk foto di pojok kiri atas). Free Fire: buka profil, lihat Player ID. Roblox: pakai username (bukan display name) yang ada di halaman profil.</p></details>
+    <details><summary>Berapa lama diamond masuk?</summary><p>Setelah bukti transfer dikirim dan dicek admin, pesanan diproses. Biasanya hanya beberapa menit.</p></details>
+    <details><summary>Salah ID, bagaimana?</summary><p>Periksa ID sebelum membayar. Pesanan dengan ID salah tidak bisa dibatalkan setelah diproses. Jika ragu, tanyakan ke admin dulu.</p></details>
+  </section>
+
+  <section class="contact">
+    <div class="hint" style="color:#ddd8ff">Ada pertanyaan? Hubungi admin</div>
+    <div class="num" id="contactNum"></div>
+    <a class="pill" id="waContact" target="_blank" rel="noopener">Chat WhatsApp</a>
+    <button class="ghost" id="copyContact">Salin nomor</button>
+  </section>
+</div>
+
+<footer>© <span id="yr"></span> <span class="sn">GemShop</span>. Nama game dan logo adalah milik pemegang mereknya masing-masing.</footer>
+<a class="fab" id="waFab" target="_blank" rel="noopener">Chat admin</a>
+
+<dialog id="dlg">
+  <div class="dh"><b>Pembayaran</b><button class="x" id="dx" aria-label="Tutup">×</button></div>
+  <p class="hint" style="text-align:center">Kode pesanan: <b id="pId" style="color:var(--text)"></b></p>
+  <div class="big" id="pTotal"></div>
+  <div class="box">
+    <div class="hint">Transfer ke DANA</div>
+    <b id="pNum"></b>
+    <div class="hint" id="pName"></div>
+    <button class="ghost" id="copyNum">Salin nomor DANA</button>
+  </div>
+  <ol>
+    <li>Transfer <b>tepat sesuai total</b> di atas.</li>
+    <li>Screenshot bukti transfer.</li>
+    <li>Tekan tombol di bawah, lalu <b>kirim screenshot</b> di chat WhatsApp.</li>
+  </ol>
+  <button class="buy alt" id="wa">Kirim bukti ke WhatsApp</button>
+</dialog>
+<div id="toast" role="status"></div>
+
+<script src="images.js"></script>
+<script>
+/* ===== KONFIGURASI: edit bagian ini saja ===== */
+const CFG = {
+  STORE: "GemShop",
+  DANA_NUMBER: "0895402917357",
+  DANA_NAME: "",            // isi nama pemilik DANA
+  CONTACT: "0895402917357", // nomor WhatsApp admin (format 08...)
+  UNIQUE_CODE: true         // tambah 1–99 rupiah agar mudah dicocokkan
+};
+const WA = "62" + CFG.CONTACT.replace(/^0/, "");
+const IMG = window.IMG_DATA || {};
+const GAMES = [
+  { id:"ml", name:"Mobile Legends", img:IMG.ml, cur:"Diamond", zone:true, label:"User ID", hint:"Contoh: 12345678",
+    re:/^\d{5,14}$/, err:"User ID harus angka, 5–14 digit.",
+    help:"<b>Zone ID</b> adalah angka dalam kurung di samping User ID pada profil game. Contoh: 12345678 (<b>1234</b>) → User ID 12345678, Zone ID 1234.",
+    packs:[[86,22000],[172,43000],[257,64000],[344,85000],[706,170000],[1412,335000]] },
+  { id:"ff", name:"Free Fire", img:IMG.ff, cur:"Diamond", zone:false, label:"Player ID", hint:"Contoh: 123456789",
+    re:/^\d{5,14}$/, err:"Player ID harus angka, 5–14 digit.",
+    help:"Free Fire <b>tidak memakai Zone ID</b>. Lihat Player ID di menu profil game.",
+    packs:[[70,10000],[140,20000],[355,50000],[720,100000],[1450,200000]] },
+  { id:"rb", name:"Robux", img:IMG.rb, cur:"Robux", zone:false, label:"Username Roblox", hint:"Contoh: budi_gamer",
+    re:/^[A-Za-z0-9_]{3,20}$/, err:"Username 3–20 karakter: huruf, angka, atau _.",
+    help:"Isi <b>username</b> (bukan display name). Jangan berikan password. Admin memandu lewat WhatsApp.",
+    packs:[[80,15000],[400,75000],[800,150000],[1700,300000]] }
+];
+/* ============================================= */
+
+const $ = id => document.getElementById(id);
+const rp = n => "Rp" + n.toLocaleString("id-ID");
+const st = { game: GAMES[0], pack: null };
+let order = null;
+const wl = t => "https://wa.me/" + WA + (t ? "?text=" + encodeURIComponent(t) : "");
+function toast(t){ const e=$("toast"); e.textContent=t; e.classList.add("on"); setTimeout(()=>e.classList.remove("on"),2200); }
+async function copy(v,msg){ try{ await navigator.clipboard.writeText(v); toast(msg); }catch(e){ toast("Nomor: "+v); } }
+
+document.querySelectorAll(".sn").forEach(e=>e.textContent=CFG.STORE);
+$("yr").textContent = new Date().getFullYear();
+["p1","p2","p3"].forEach((id,i)=>{ const s=[IMG.ml,IMG.ff,IMG.rb][i]; if(s) $(id).src=s; else $(id).remove(); });
+$("contactNum").textContent = CFG.CONTACT;
+const hi = "Halo admin, saya mau tanya soal top up.";
+$("waTop").href = $("waContact").href = $("waFab").href = wl(hi);
+$("copyContact").onclick = ()=>copy(CFG.CONTACT,"Nomor admin disalin");
+
+function renderGames(){
+  $("games").innerHTML = "";
+  GAMES.forEach(g=>{
+    const b = document.createElement("button");
+    b.className = "game";
+    b.innerHTML = (g.img ? `<img src="${g.img}" alt="">` : "") + `<span>${g.name}</span>`;
+    b.setAttribute("aria-pressed", g===st.game);
+    b.onclick = ()=>{ st.game=g; st.pack=null; $("uid").value=""; $("zone").value=""; $("idMsg").textContent=""; renderAll(); };
+    $("games").appendChild(b);
+  });
+}
+function renderPacks(){
+  $("pkgs").innerHTML = "";
+  st.game.packs.forEach(p=>{
+    const b = document.createElement("button");
+    b.className = "pkg";
+    b.innerHTML = `<b>${p[0].toLocaleString("id-ID")}</b><em>${st.game.cur}</em><small>${rp(p[1])}</small>`;
+    b.setAttribute("aria-pressed", st.pack===p);
+    b.onclick = ()=>{ st.pack=p; renderPacks(); renderSummary(); };
+    $("pkgs").appendChild(b);
+  });
+}
+function accountId(){
+  const u=$("uid").value.trim(), z=$("zone").value.trim();
+  return st.game.zone ? (u && z ? `${u} (${z})` : "") : u;
+}
+function renderSummary(){
+  $("sGame").textContent = st.game.name;
+  $("sId").textContent = accountId() || "-";
+  $("sPkg").textContent = st.pack ? `${st.pack[0].toLocaleString("id-ID")} ${st.game.cur}` : "-";
+  $("sTotal").textContent = rp(st.pack ? st.pack[1] : 0);
+}
+function renderAll(){
+  renderGames(); renderPacks();
+  const g = st.game;
+  $("uidLabel").textContent = g.label;
+  $("uid").placeholder = g.hint;
+  $("uid").inputMode = g.id==="rb" ? "text" : "numeric";
+  $("idHelp").innerHTML = g.help;
+  $("zoneBox").style.display = g.zone ? "" : "none";
+  $("fields").classList.toggle("one", !g.zone);
+  renderSummary();
+}
+function validate(){
+  const u=$("uid").value.trim(), z=$("zone").value.trim();
+  const okU = st.game.re.test(u), okZ = !st.game.zone || /^\d{3,6}$/.test(z);
+  $("uid").classList.toggle("bad", !okU);
+  $("zone").classList.toggle("bad", !okZ);
+  $("idMsg").textContent = !okU ? st.game.err : !okZ ? "Zone ID harus angka, 3–6 digit." : "";
+  return okU && okZ;
+}
+$("uid").oninput = $("zone").oninput = renderSummary;
+function newId(){
+  const d = new Date(), p = n => String(n).padStart(2,"0");
+  return "GS" + p(d.getDate()) + p(d.getMonth()+1) + "-" + Math.random().toString(36).slice(2,6).toUpperCase();
+}
+$("buy").onclick = ()=>{
+  $("buyMsg").textContent = "";
+  if(!validate()){ $("uid").focus(); return; }
+  if(!st.pack){ $("buyMsg").textContent = "Pilih nominal dulu."; return; }
+  const unique = CFG.UNIQUE_CODE ? Math.floor(Math.random()*99)+1 : 0;
+  order = { id:newId(), game:st.game.name, cur:st.game.cur, qty:st.pack[0], account:accountId(), total:st.pack[1]+unique };
+  $("pId").textContent = order.id;
+  $("pTotal").textContent = rp(order.total);
+  $("pNum").textContent = CFG.DANA_NUMBER;
+  $("pName").textContent = CFG.DANA_NAME;
+  $("dlg").showModal();
+};
+$("copyNum").onclick = ()=>copy(CFG.DANA_NUMBER,"Nomor DANA disalin");
+$("wa").onclick = ()=>{
+  const t = ["Halo admin, saya sudah transfer.","Kode: "+order.id,"Game: "+order.game,"Akun: "+order.account,
+    "Nominal: "+order.qty+" "+order.cur,"Total: "+rp(order.total),"(bukti transfer saya kirim setelah pesan ini)"].join("\n");
+  window.open(wl(t), "_blank");
+};
+$("dx").onclick = ()=>$("dlg").close();
+renderAll();
+</script>
+</body>
+</html>
